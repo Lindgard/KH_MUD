@@ -17,8 +17,12 @@ dotnet add package Spectre.Console.Cli
     * Game
         - Core
         - World
+            - Dungeon
+            - Building
+            - Room
         - Engine
         - UI
+        - CommandProcessor
 ### Gameloop
     * Input
     * Parse
