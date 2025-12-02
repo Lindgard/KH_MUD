@@ -24,3 +24,9 @@ dotnet add package Spectre.Console.Cli
     * Parse
     * Execute
     * Output
+
+# TODO: 02.12.2025 - 04.12.2025
+    - Implement a name for the player in the Player class constructor.
+    - Create a "World map"
+    - Create different scenarios
+    - Implement a set of different commands in the CommandProcessor class
