@@ -2,8 +2,9 @@
   description = "Dev shell for KH_MUD .NET project";
 
   inputs = {
-    # You can change this to a specific revision or a different channel if you want.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Pin to a nixpkgs revision that already packages the .NET 10 SDK attribute.
+    # Update this hash when you want newer packages.
+    nixpkgs.url = "github:nixos/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -17,20 +18,19 @@
         };
       in {
         devShells.default = pkgs.mkShell {
-          # .NET SDK – this will normally be the latest SDK (often newest LTS or STS).
-          # If you specifically need .NET 10 once it lands in nixpkgs, you can
-          # switch to the appropriate package here (e.g. pkgs.dotnet-sdk-10 or similar).
+          # Explicitly use the .NET 10 SDK from nixpkgs.
           buildInputs = [
-            pkgs.dotnet-sdk
+            pkgs.dotnet-sdk_10
+            pkgs.dotnet-format
           ];
 
           # Extra environment setup if needed
           shellHook = ''
             echo "KH_MUD dev shell with .NET SDK is ready."
             echo "You can now run: dotnet restore && dotnet build && dotnet run"
+            echo "Run 'dotnet format' for C# formatting."
           '';
         };
+        formatter = pkgs.nixpkgs-fmt;
       });
 }
-
-
