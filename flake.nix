@@ -20,15 +20,15 @@
         devShells.default = pkgs.mkShell {
           # Explicitly use the .NET 10 SDK from nixpkgs.
           buildInputs = [
-            pkgs.dotnet-sdk_10
-            pkgs.dotnet-format
+            pkgs.dotnetCorePackages.sdk_10_0
+            pkgs.csharpier
           ];
 
           # Extra environment setup if needed
           shellHook = ''
             echo "KH_MUD dev shell with .NET SDK is ready."
             echo "You can now run: dotnet restore && dotnet build && dotnet run"
-            echo "Run 'dotnet format' for C# formatting."
+            echo "Run 'csharpier .' for C# formatting."
           '';
         };
         formatter = pkgs.nixpkgs-fmt;
