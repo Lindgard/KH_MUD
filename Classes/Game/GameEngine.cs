@@ -11,11 +11,13 @@ public class GameEngine
     /// </summary>
     private bool _isRunningState;
     /// <summary>
-    /// This field, creates an object instance of the CommandProcessor class, and handles all commands available to the player
+    /// This field, creates an object instance of the CommandProcessor class, 
+    /// and handles all commands available to the player
     /// </summary>
     private readonly CommandProcessor? _commands;
     /// <summary>
-    /// This field, creates an object instance of the Player class, and handles all logic that has to do with the player.
+    /// This field, creates an object instance of the Player class, 
+    /// and handles all logic that has to do with the player.
     /// </summary>
     private readonly Player? _player;
 
@@ -29,7 +31,8 @@ public class GameEngine
     /// <summary>
     /// This is the game's main loop.
     /// When this method is called externally outside of this GameEngine class, we set 
-    /// the current running state to true. This method also uses Spectre Console for rendering and commandline userinput handling
+    /// the current running state to true. 
+    /// This method also uses Spectre Console for rendering and commandline userinput handling
     /// </summary>
     public void StartGame()
     {

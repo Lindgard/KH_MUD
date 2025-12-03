@@ -1,13 +1,15 @@
 public class CommandProcessor
 {
     /// <summary>
-    /// a key-value pairing of a set of commands(string) and the command to execute(seperate command class. ex: LookCommand)
+    /// a key-value pairing of a set of commands(string) 
+    /// and the command to execute(seperate command class. ex: LookCommand)
     /// </summary>
     private readonly Dictionary<string, ICommand>? _commands;
 
     public CommandProcessor()
     {
-        // we initalize our _commands Dictionary, and give it keys that correspond with our currently created commands
+        // we initalize our _commands Dictionary, 
+        // and give it keys that correspond with our currently created commands
         _commands = new Dictionary<string, ICommand>(StringComparer.OrdinalIgnoreCase)
         {
             {"look", new LookCommand()},
